@@ -22,7 +22,7 @@ def rwh_primes1(n):
     for i in tqdm.tqdm(range(3,int(n**0.5)+1,2)):
         if sieve[int(i/2)]:
             sieve[int(i*i/2)::i] = [False] * int((n-i*i-1)/(2*i)+1)
-    return [2] + [2*i+1 for i in range(1,n/2) if sieve[int(i)]]
+    return [2] + [int(2*i+1) for i in range(1,int(n/2)) if sieve[int(i)]]
 
 
 def identify_truncatable_prime(prime, primes):
